@@ -1,17 +1,14 @@
 class Solution {
-    public int integerBreak(int n) {
-        if (n == 2) {
-            return 1;
-        }
+    public int numSquares(int n) {
         int[] dp = new int[n+1];
-        dp[2] = 1;
-        for (int i = 3 ; i <= n ; i ++) {
-            for (int j = 1 ; j < i ; j ++) {
-                dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i-j]));
+        for (int i = 0 ; i < n+1 ; i ++) {
+            dp[i] = i;
+        }
+        for (int i = 1 ; i <= n ; i ++) {
+            for (int j = 1 ; j * j <= i ; j ++) {
+                dp[i] = Math.min(dp[i], dp[i-j*j] + 1);
             }
         }
         return dp[n];
     }
-
-
 }
