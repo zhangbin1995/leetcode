@@ -3,6 +3,7 @@ package lc201_400;
 /**
  * 最长上升子序列
  * https://leetcode-cn.com/problems/longest-increasing-subsequence/submissions/
+ * 给定一个无序的整数数组，找到其中最长上升子序列的长度。
  *
  * @author binzhang
  * @date 2019-08-17
